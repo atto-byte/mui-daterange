@@ -1,0 +1,34 @@
+[
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "compilers/react-typescript"
+    },
+    "isSymlink": false,
+    "hash": "3865a0706bf26cad691e66284db206cbdae67f91"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "internal/typescript-base-compiler"
+    },
+    "isSymlink": false,
+    "hash": "25c34dd9324192d4c48ac4434881acb7662f9d72"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/has-own-property"
+    },
+    "isSymlink": false,
+    "hash": "68b489f0ac79f13787c77dc1fd6a7beb18a7b6ba"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/group-by"
+    },
+    "isSymlink": false,
+    "hash": "9155f60c15a0d4c1c0301f15ef2a09a99687ca77"
+  }
+]
