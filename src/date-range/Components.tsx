@@ -81,4 +81,4 @@ export const Header = withTheme(styled(Cell)({
  "& > *": {
     color: ({ theme }) => fromTheme(theme, 'header', '#9e9e9e')
   }
-})
+}))

@@ -30,5 +30,21 @@
     },
     "isSymlink": false,
     "hash": "9155f60c15a0d4c1c0301f15ef2a09a99687ca77"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "date-range"
+    },
+    "isSymlink": true,
+    "hash": "b4b04eaf7cd92c34e2f23d0f8223308e71987753"
+  },
+  {
+    "id": {
+      "scope": "atto-byte.components",
+      "name": "date-range"
+    },
+    "isSymlink": false,
+    "hash": "cfc84ebbb45e74da1c69e06eabbd1eaa4a4c57d1"
   }
 ]
