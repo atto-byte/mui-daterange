@@ -52,7 +52,6 @@ function getBorderRadius({ isInRange, isRangeStart, isRangeEnd }) {
 }
 
 function getBackground(props) {
-  console.log(props);
   if (props.isSelected) return fromTheme(props.theme, 'selected', props.theme.palette.primary.main);
   if (props.isHighlighted) return fromTheme(props.theme, 'highlighted', '#ebebeb');
   if (props.isInRange) return fromTheme(props.theme, 'inRange', props.theme.palette.primary.light);
