@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { styled, withTheme } from '@material-ui/styles';
 
-function fromTheme(theme, key, def) {
+function fromTheme(theme: any, key: string, def: string) {
   if (!theme || !theme.dateRangePicker) return def;
   const value = theme.dateRangePicker[key];
   return typeof value !== 'undefined' ? value : def;
@@ -31,7 +31,7 @@ export const Text = styled(Typography)({
   left: 0,
 })
 
-function getCellWidth({widthPercentage, horizontalSpacing}): string {
+function getCellWidth({widthPercentage = 1 / 7, horizontalSpacing = 0}): string {
   widthPercentage = widthPercentage ? widthPercentage :  1 / 7;
   horizontalSpacing = horizontalSpacing ? 3 : 0;
   return `calc(100% * ${widthPercentage} - ${horizontalSpacing}px)`;
