@@ -6,8 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Kalendaryo from 'kalendaryo';
 import Calendar from './Calendar';
 import { styled, useTheme } from '@material-ui/styles';
-import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core';
+
 
 const Wrapper = styled('div')({
   position: 'relative',

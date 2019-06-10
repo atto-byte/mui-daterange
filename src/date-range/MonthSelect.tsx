@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { isSameMonth, getMonth, addMonths, format, isThisMonth } from 'date-fns';
 import { Text, Header, HeaderDivider, Row, SelectableCell } from './Components';
-import YearSelect from './YearSelect';
+import YearSelect, { YearSelectProps } from './YearSelect';
 
-function getMonthsInYear(date, dateFormat = 'MMM') {
+function getMonthsInYear(date: string | number | Date, dateFormat = 'MMM') {
   const result = [];
   const selectedMonth = getMonth(date);
   for (let month = 0; month < 12; month++) {
@@ -12,8 +12,8 @@ function getMonthsInYear(date, dateFormat = 'MMM') {
   }
   return result;
 }
-
-function MonthSelect(props) {
+interface MonthSelectProps extends YearSelectProps {}
+function MonthSelect(props: MonthSelectProps) {
   const { setDate, date } = props;
 
   return (

@@ -7,7 +7,7 @@ const Divider = styled(HeaderDivider)({
     marginTop: '8px'
 })
 
-function getSurroundingYears(date, amount = 8, dateFormat = 'YYYY') {
+function getSurroundingYears(date: Date, amount = 8, dateFormat = 'YYYY') {
   const result = [];
   const selectedYearIndex = getYear(date) % amount;
   for (let year = 0; year < amount; year++) {
@@ -16,8 +16,11 @@ function getSurroundingYears(date, amount = 8, dateFormat = 'YYYY') {
   }
   return result;
 }
-
-function YearSelect(props) {
+export interface YearSelectProps {
+  setDate: (date: Date) => void;
+  date: Date
+}
+function YearSelect(props: YearSelectProps) {
   const { setDate, date } = props;
 
   return (

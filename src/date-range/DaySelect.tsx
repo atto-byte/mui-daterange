@@ -1,12 +1,16 @@
 import * as React from 'react';
 import { isSameMonth, isWithinRange, isSameDay, isToday } from 'date-fns';
 import { Text, Header, HeaderDivider, Row, SelectableCell } from './Components';
+import { YearSelectProps } from './YearSelect';
 
-const dateIsInRange = (date, fromDate, toDate) => fromDate && toDate && isWithinRange(date, fromDate, toDate);
+const dateIsInRange = (date: Date, fromDate: Date, toDate: Date) => fromDate && toDate && isWithinRange(date, fromDate, toDate);
 
-const isSelected = (date, compareDate) => compareDate && isSameDay(date, compareDate);
-
-function DaySelect(props) {
+const isSelected = (date: Date, compareDate: Date) => compareDate && isSameDay(date, compareDate);
+interface DaySelectProps extends YearSelectProps {
+  fromDate: Date;
+  toDate: Date;
+}
+function DaySelect(props: DaySelectProps) {
   const {
     fromDate,
     toDate,
