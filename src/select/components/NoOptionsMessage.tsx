@@ -1,7 +1,7 @@
-import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
-import { NoticeProps } from '../lib/components/Menu';
+import React from 'react';
+import { NoticeProps } from 'react-select/lib/components/Menu';
 import { OptionType } from '../index';
 function NoOptionsMessage(props: NoticeProps<OptionType>) {
   return (<Typography color="textSecondary" className={props.selectProps.classes.noOptionsMessage} {...props.innerProps}>
@@ -13,4 +13,4 @@ NoOptionsMessage.propTypes = {
   innerProps: PropTypes.object,
   selectProps: PropTypes.object.isRequired,
 } as any;
-export { NoOptionsMessage }
+export { NoOptionsMessage };

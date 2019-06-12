@@ -1,7 +1,7 @@
-import React from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import PropTypes from 'prop-types';
-import { OptionProps } from '../lib/components/Option';
+import React from 'react';
+import { OptionProps } from 'react-select/lib/components/Option';
 import { OptionType } from '../index';
 
 function Option(props: OptionProps<OptionType>) {
@@ -18,4 +18,4 @@ Option.propTypes = {
   isFocused: PropTypes.bool,
   isSelected: PropTypes.bool,
 } as any;
-export { Option }
+export { Option };

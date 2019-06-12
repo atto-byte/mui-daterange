@@ -1,9 +1,9 @@
-import * as React from 'react';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
+import * as React from 'react';
+import { ControlProps } from 'react-select/lib/components/Control';
 import { OptionType } from '../';
-import {inputComponent} from './inputComponent'
-import { ControlProps } from '../lib/components/Control';
+import { inputComponent } from './inputComponent';
 function Control(props: ControlProps<OptionType>) {
   const { children, innerProps, innerRef, selectProps: { classes, TextFieldProps }, } = props;
   return (<TextField fullWidth InputProps={{
@@ -22,4 +22,5 @@ Control.propTypes = {
   innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   selectProps: PropTypes.object.isRequired,
 } as any;
-export { Control }
+export { Control };
+
