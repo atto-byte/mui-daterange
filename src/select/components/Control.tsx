@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import { OptionType } from '../';
 import {inputComponent} from './inputComponent'
-import { ControlProps } from 'react-select/lib/components/Control';
+import { ControlProps } from '../lib/components/Control';
 function Control(props: ControlProps<OptionType>) {
   const { children, innerProps, innerRef, selectProps: { classes, TextFieldProps }, } = props;
   return (<TextField fullWidth InputProps={{

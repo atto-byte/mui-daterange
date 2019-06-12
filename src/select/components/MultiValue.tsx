@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Chip from '@material-ui/core/Chip';
 import CancelIcon from '@material-ui/icons/Cancel';
 import PropTypes from 'prop-types';
-import { MultiValueProps } from 'react-select/lib/components/MultiValue';
+import { MultiValueProps } from '../lib/components/MultiValue';
 interface OptionType {
   label: string;
   value: string;

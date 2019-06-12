@@ -4,7 +4,7 @@ import { useTheme } from '@material-ui/core/styles';
 import NoSsr from '@material-ui/core/NoSsr';
 import { useStyles } from './styles';
 import * as components from './components'
-import { Props } from 'react-select/lib/Select';
+import { Props } from './lib/Select';
 export interface OptionType {
   label: string;
   value: string;
@@ -50,7 +50,7 @@ const suggestions: OptionType[] = [
   label: suggestion.label,
 }));
 
-interface IntegrationReactSelectProps extends Props {
+export interface IntegrationReactSelectProps extends Props {
   label: string;
 }
 function IntegrationReactSelect(props: IntegrationReactSelectProps) {
