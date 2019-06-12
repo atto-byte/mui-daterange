@@ -15,7 +15,7 @@ export const HeaderDivider = styled(Divider)({
 
 export const Row = styled('div')({
   display: "flex",
-  flexWrap: "wrap",
+  flexWrap: (props) => props.nowrap ? "nowrap" : "wrap",
   alignItems: "center",
   justifyContent: "space-between",
 })

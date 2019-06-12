@@ -14,7 +14,7 @@ import { styled } from '@material-ui/styles';
 
 const Wrapper = styled(Card)({
   marginTop: 10,
-  width: "100%",
+  width: "350px",
   minWidth: 212,
   position: "absolute",
   zIndex: 1,

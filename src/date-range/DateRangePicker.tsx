@@ -6,6 +6,8 @@ import TextField from '@material-ui/core/TextField';
 import Kalendaryo from 'kalendaryo';
 import Calendar from './Calendar';
 import { styled, useTheme } from '@material-ui/styles';
+import { InputAdornment, IconButton } from '@material-ui/core';
+import DateRange from '@material-ui/icons/DateRange';
 
 
 const Wrapper = styled('div')({
@@ -120,7 +122,12 @@ const DateRangePicker: React.FC<DateRangePickerProps> = (props) => {
             placeholder="From:"
             fullWidth
             InputProps={{
-              ...getInputProps(), 
+              ...getInputProps(),
+              endAdornment: <InputAdornment position="start">
+              <IconButton>
+                <DateRange />
+              </IconButton>
+              </InputAdornment>,
               readOnly: true,
               onClick: downshiftProps.openMenu as any,
               onFocus: downshiftProps.openMenu as any

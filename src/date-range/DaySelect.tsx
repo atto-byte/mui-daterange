@@ -27,7 +27,7 @@ function DaySelect(props: DaySelectProps) {
   const isInOtherMonth = dateValue => !isSameMonth(date, dateValue);
   return (
     <React.Fragment>
-      <Row>
+      <Row nowrap>
         {getDayLabelsInWeek('dd').map(day => (
           <Header key={day}>
             <Text>{day}</Text>
