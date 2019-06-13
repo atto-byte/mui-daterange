@@ -1,8 +1,8 @@
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { SingleValueProps } from 'react-select/lib/components/SingleValue';
 import { OptionType } from '../index';
+import { SingleValueProps } from '../lib/components/SingleValue';
 function SingleValue(props: SingleValueProps<OptionType>) {
   return (<Typography className={props.selectProps.classes.singleValue} {...props.innerProps}>
     {props.children}

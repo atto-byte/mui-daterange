@@ -10,46 +10,6 @@ export interface OptionType {
   value: string;
 }
 
-const suggestions: OptionType[] = [
-  { label: 'Afghanistan' },
-  { label: 'Aland Islands' },
-  { label: 'Albania' },
-  { label: 'Algeria' },
-  { label: 'American Samoa' },
-  { label: 'Andorra' },
-  { label: 'Angola' },
-  { label: 'Anguilla' },
-  { label: 'Antarctica' },
-  { label: 'Antigua and Barbuda' },
-  { label: 'Argentina' },
-  { label: 'Armenia' },
-  { label: 'Aruba' },
-  { label: 'Australia' },
-  { label: 'Austria' },
-  { label: 'Azerbaijan' },
-  { label: 'Bahamas' },
-  { label: 'Bahrain' },
-  { label: 'Bangladesh' },
-  { label: 'Barbados' },
-  { label: 'Belarus' },
-  { label: 'Belgium' },
-  { label: 'Belize' },
-  { label: 'Benin' },
-  { label: 'Bermuda' },
-  { label: 'Bhutan' },
-  { label: 'Bolivia, Plurinational State of' },
-  { label: 'Bonaire, Sint Eustatius and Saba' },
-  { label: 'Bosnia and Herzegovina' },
-  { label: 'Botswana' },
-  { label: 'Bouvet Island' },
-  { label: 'Brazil' },
-  { label: 'British Indian Ocean Territory' },
-  { label: 'Brunei Darussalam' },
-].map(suggestion => ({
-  value: suggestion.label,
-  label: suggestion.label,
-}));
-
 export interface IntegrationReactSelectProps extends Props {
   label: string;
 }
@@ -92,3 +52,15 @@ function IntegrationReactSelect(props: IntegrationReactSelectProps) {
 }
 
 export default IntegrationReactSelect;
+
+import SelectBase from './lib/Select';
+import { default as StateManager } from './lib/stateManager';
+
+export { SelectBase };
+export { default as Async } from './lib/Async';
+export { default as AsyncCreatable } from './lib/AsyncCreatable';
+export { default as Creatable } from './lib/Creatable';
+export { createFilter } from './lib/filters';
+export { default as makeAnimated } from './lib/animated/index';
+export { components } from './lib/components/index';
+export { mergeStyles } from './lib/styles';

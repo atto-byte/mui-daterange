@@ -1,8 +1,8 @@
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { ControlProps } from 'react-select/lib/components/Control';
 import { OptionType } from '../';
+import { ControlProps } from '../lib/components/Control';
 import { inputComponent } from './inputComponent';
 function Control(props: ControlProps<OptionType>) {
   const { children, innerProps, innerRef, selectProps: { classes, TextFieldProps }, } = props;

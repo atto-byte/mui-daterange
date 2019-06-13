@@ -41,14 +41,6 @@
   },
   {
     "id": {
-      "scope": "atto-byte.components",
-      "name": "date-range"
-    },
-    "isSymlink": false,
-    "hash": "cfc84ebbb45e74da1c69e06eabbd1eaa4a4c57d1"
-  },
-  {
-    "id": {
       "scope": null,
       "name": "select"
     },
@@ -62,5 +54,13 @@
     },
     "isSymlink": false,
     "hash": "7790c38e731162e5e89a121ba47823f383e426dd"
+  },
+  {
+    "id": {
+      "scope": "atto-byte.components",
+      "name": "date-range"
+    },
+    "isSymlink": false,
+    "hash": "cfc84ebbb45e74da1c69e06eabbd1eaa4a4c57d1"
   }
 ]
