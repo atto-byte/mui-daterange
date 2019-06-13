@@ -81,6 +81,11 @@
             "compiler": "bit.envs/compilers/react-typescript@3.0.6"
         },
         "componentsDefaultDirectory": "components/{name}",
-        "packageManager": "npm"
+        "packageManager": "npm",
+        "resolveModules": {
+            "aliases":  {
+                "react-select/lib": "node_modules/@types/react-select/lib"
+            }
+        }
     }
 }
