@@ -1,8 +1,8 @@
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { PlaceholderProps } from 'react-select/lib/components/Placeholder';
 import { OptionType } from '../index';
-import { PlaceholderProps } from '../lib/components/Placeholder';
 function Placeholder(props: PlaceholderProps<OptionType>) {
   return (<Typography color="textSecondary" className={props.selectProps.classes.placeholder} {...props.innerProps}>
     {props.children}

@@ -22,7 +22,8 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "*": ["src/*", "node_modules/*"]
+      "*": ["src/*", "node_modules/*"],
+      "react-select/lib/*": ["node_modules/@types/react-select/lib/*"]
     },
     "jsx": "react",
     "esModuleInterop": true
