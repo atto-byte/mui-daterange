@@ -3,7 +3,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { MultiValueProps } from '../lib/components/MultiValue';
+import { MultiValueProps } from 'react-select/lib/components/MultiValue';
 interface OptionType {
   label: string;
   value: string;

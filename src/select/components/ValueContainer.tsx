@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { ValueContainerProps } from 'react-select/lib/components/containers';
 import { OptionType } from '../index';
-import { ValueContainerProps } from '../lib/components/containers';
 function ValueContainer(props: ValueContainerProps<OptionType>) {
   return <div className={props.selectProps.classes.valueContainer}>{props.children}</div>;
 }

@@ -4,7 +4,7 @@ import { useTheme } from '@material-ui/core/styles';
 import NoSsr from '@material-ui/core/NoSsr';
 import { useStyles } from './styles';
 import * as components from './components'
-import { Props } from './lib/Select';
+import { Props } from 'react-select/lib/Select';
 export interface OptionType {
   label: string;
   value: string;
@@ -53,14 +53,3 @@ function IntegrationReactSelect(props: IntegrationReactSelectProps) {
 
 export default IntegrationReactSelect;
 
-import SelectBase from './lib/Select';
-import { default as StateManager } from './lib/stateManager';
-
-export { SelectBase };
-export { default as Async } from './lib/Async';
-export { default as AsyncCreatable } from './lib/AsyncCreatable';
-export { default as Creatable } from './lib/Creatable';
-export { createFilter } from './lib/filters';
-export { default as makeAnimated } from './lib/animated/index';
-export { components } from './lib/components/index';
-export { mergeStyles } from './lib/styles';
