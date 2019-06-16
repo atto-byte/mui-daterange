@@ -112,11 +112,6 @@
                 "name": "index.tsx"
             },
             {
-                "relativePath": "src/select/lib/Async.d.ts",
-                "test": false,
-                "name": "Async.d.ts"
-            },
-            {
                 "relativePath": "src/select/styles.ts",
                 "test": false,
                 "name": "styles.ts"

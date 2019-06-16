@@ -4,7 +4,7 @@ import { useTheme } from '@material-ui/core/styles';
 import NoSsr from '@material-ui/core/NoSsr';
 import { useStyles } from './styles';
 import * as components from './components'
-import { Props } from 'react-select/lib/Select';
+import { Props } from '../../node_modules/@types/react-select/lib/Select';
 export interface OptionType {
   label: string;
   value: string;
