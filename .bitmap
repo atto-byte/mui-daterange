@@ -49,7 +49,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "atto-byte.components/select@0.0.3": {
+    "atto-byte.components/select@0.0.4": {
         "files": [
             {
                 "relativePath": "src/select/README.md",
