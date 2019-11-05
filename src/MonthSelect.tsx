@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { isSameMonth, getMonth, addMonths, format, isThisMonth } from 'date-fns';
+import {
+  isSameMonth,
+  getMonth,
+  addMonths,
+  format,
+  isThisMonth,
+} from 'date-fns';
 import { Text, Header, HeaderDivider, Row, SelectableCell } from './Components';
 import YearSelect, { YearSelectProps } from './YearSelect';
 
@@ -30,7 +36,8 @@ function MonthSelect(props: MonthSelectProps) {
             horizontalSpacing
             onClick={() => setDate(month.dateValue)}
             isSelected={isSameMonth(month.dateValue, date)}
-            isCurrent={isThisMonth(month.dateValue)}>
+            isCurrent={isThisMonth(month.dateValue)}
+          >
             <Text>{month.label}</Text>
           </SelectableCell>
         ))}

@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { isSameMonth, isWithinRange, isSameDay, isToday } from 'date-fns';
+import { isSameMonth, isWithinInterval, isSameDay, isToday } from 'date-fns';
 import { Text, Header, HeaderDivider, Row, SelectableCell } from './Components';
 import { YearSelectProps } from './YearSelect';
 
-const dateIsInRange = (date: Date, fromDate: Date, toDate: Date) => fromDate && toDate && isWithinRange(date, fromDate, toDate);
+const dateIsInRange = (date: Date, fromDate: Date, toDate: Date) =>
+  fromDate &&
+  toDate &&
+  isWithinInterval(date, { start: fromDate, end: toDate });
 
-const isSelected = (date: Date, compareDate: Date) => compareDate && isSameDay(date, compareDate);
+const isSelected = (date: Date, compareDate: Date) =>
+  compareDate && isSameDay(date, compareDate);
 interface DaySelectProps extends YearSelectProps {
   fromDate: Date;
   toDate: Date;
@@ -20,7 +24,7 @@ function DaySelect(props: DaySelectProps) {
     getItemProps,
     getMenuProps,
     highlightedIndex,
-    setHighlightedIndex
+    setHighlightedIndex,
   } = props;
 
   const weeksInMonth = getWeeksInMonth();
@@ -53,8 +57,9 @@ function DaySelect(props: DaySelectProps) {
                   isRangeStart: isFromDate && toDate,
                   isRangeEnd: isToDate && fromDate,
                   isSelected: isFromDate || isToDate,
-                  isCurrent: isToday(day.dateValue)
-                })}>
+                  isCurrent: isToday(day.dateValue),
+                })}
+              >
                 <Text>{day.label}</Text>
               </SelectableCell>
             );

@@ -4,8 +4,8 @@ import { Text, HeaderDivider, Row, SelectableCell } from './Components';
 import { styled } from '@material-ui/styles';
 
 const Divider = styled(HeaderDivider)({
-    marginTop: '8px'
-})
+  marginTop: '8px',
+});
 
 function getSurroundingYears(date: Date, amount = 8, dateFormat = 'YYYY') {
   const result = [];
@@ -18,7 +18,7 @@ function getSurroundingYears(date: Date, amount = 8, dateFormat = 'YYYY') {
 }
 export interface YearSelectProps {
   setDate: (date: Date) => void;
-  date: Date
+  date: Date;
 }
 function YearSelect(props: YearSelectProps) {
   const { setDate, date } = props;
@@ -34,7 +34,8 @@ function YearSelect(props: YearSelectProps) {
             horizontalSpacing
             onClick={() => setDate(year.dateValue)}
             isSelected={isSameYear(year.dateValue, date)}
-            isCurrent={isThisYear(year.dateValue)}>
+            isCurrent={isThisYear(year.dateValue)}
+          >
             <Text>{year.label}</Text>
           </SelectableCell>
         ))}

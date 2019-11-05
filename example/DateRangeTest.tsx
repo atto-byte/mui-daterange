@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 /*  1. Import material date range picker */
-import {DateRangePicker} from '../src/date-range';
+import { DateRangePicker } from '../src';
 
 const Wrapper = styled.div`
   width: 350px;
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 class App extends React.Component {
   state = {
     fromDate: null,
-    toDate: null
+    toDate: null,
   };
   /*  2. Add state handler */
   _handleDateRangeChange = update => this.setState(update);
@@ -26,7 +26,7 @@ class App extends React.Component {
           toDate={this.state.toDate}
           onChange={this._handleDateRangeChange}
           closeDialogOnSelection={false}
-          dateFormat={"'YYYY-MM-DD'"}
+          dateFormat={'dd/MM/yyyy'}
         />
       </Wrapper>
     );

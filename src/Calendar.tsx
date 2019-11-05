@@ -14,42 +14,50 @@ import { styled } from '@material-ui/styles';
 
 const Wrapper = styled(Card)({
   marginTop: 10,
-  width: "350px",
+  width: '350px',
   minWidth: 212,
-  position: "absolute",
+  position: 'absolute',
   zIndex: 1,
-  flexDirection: "row",
+  flexDirection: 'row',
   padding: 8,
-})
+});
 
 const MonthButton = styled(IconButton)({
-  position: "absolute",
+  position: 'absolute',
   top: 0,
   right: 0,
   bottom: 0,
   left: 0,
-  width: "100%",
-  height: "100%",
-})
+  width: '100%',
+  height: '100%',
+});
 
 export const Spacer = styled('div')({
-  flex: 1
+  flex: 1,
 });
 
 const MothText = styled(Button)({
   fontWeight: 600,
   fontSize: 14,
-})
+});
 
-export default class Calendar extends React.PureComponent {
+export class Calendar extends React.PureComponent {
   state = { monthSelectOpen: false };
 
-  handleMonthTextClick = () => this.setState(({ monthSelectOpen }) => ({ monthSelectOpen: !monthSelectOpen }));
+  handleMonthTextClick = () =>
+    this.setState(({ monthSelectOpen }) => ({
+      monthSelectOpen: !monthSelectOpen,
+    }));
 
   preventInputLosingFocus = e => e.preventDefault();
 
   render() {
-    const { getFormattedDate, setDateNextMonth, setDatePrevMonth, clearDateRange } = this.props;
+    const {
+      getFormattedDate,
+      setDateNextMonth,
+      setDatePrevMonth,
+      clearDateRange,
+    } = this.props;
     const { monthSelectOpen } = this.state;
     return (
       <Wrapper raised onMouseDown={this.preventInputLosingFocus}>
@@ -75,7 +83,11 @@ export default class Calendar extends React.PureComponent {
             </MonthButton>
           </Cell>
         </Row>
-        {monthSelectOpen ? <MonthSelect {...this.props} /> : <DaySelect {...this.props} />}
+        {monthSelectOpen ? (
+          <MonthSelect {...this.props} />
+        ) : (
+          <DaySelect {...this.props} />
+        )}
       </Wrapper>
     );
   }

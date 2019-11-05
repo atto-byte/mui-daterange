@@ -1,28 +1,37 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Downshift, { ControllerStateAndHelpers } from 'downshift';
+import Downshift, {
+  ControllerStateAndHelpers,
+  DownshiftState,
+  StateChangeOptions,
+} from 'downshift';
 import { isSameDay, format, isAfter, isBefore } from 'date-fns';
 import TextField from '@material-ui/core/TextField';
 import Kalendaryo from 'kalendaryo';
-import Calendar from './Calendar';
+import { Calendar } from './Calendar';
 import { styled, useTheme } from '@material-ui/styles';
 import { InputAdornment, IconButton } from '@material-ui/core';
 import DateRange from '@material-ui/icons/DateRange';
 
-
 const Wrapper = styled('div')({
   position: 'relative',
-  "*":{
-    boxSizing: 'border-box'
-  }
+  '*': {
+    boxSizing: 'border-box',
+  },
 });
 
-const itemToString = (dateFormat: string) => ({ fromDate, toDate }: DateRange) =>
-  `${fromDate ? `From: ${format(fromDate, dateFormat)}${toDate ? ' ' : ''}` : ''}${
-    toDate ? `To: ${format(toDate, dateFormat)}` : ''
+const itemToString = (dateFormat: string) => ({
+  fromDate,
+  toDate,
+}: DateRange) =>
+  `${fromDate ? `${format(fromDate, dateFormat)}${toDate ? ' ' : ''}` : ''}${
+    toDate ? `⟶ ${format(toDate, dateFormat)}` : ''
   }`;
 
-function stateReducer(state, changes) {
+function stateReducer(
+  state: DownshiftState<any>,
+  changes: StateChangeOptions<any>
+) {
   // this prevents the menu from being closed when the user
   // selects an item with a keyboard or mouse
   switch (changes.type) {
@@ -31,7 +40,7 @@ function stateReducer(state, changes) {
       return {
         ...changes,
         isOpen: state.isOpen,
-        highlightedIndex: state.highlightedIndex
+        highlightedIndex: state.highlightedIndex,
       };
     default:
       return changes;
@@ -40,19 +49,22 @@ function stateReducer(state, changes) {
 
 const renderCalendar = (props: DateRangePickerProps) => <Calendar {...props} />;
 type DateRange = {
-  fromDate?: any,
-  toDate?: any
-}
+  fromDate?: any;
+  toDate?: any;
+};
 interface DateRangePickerProps {
-  fromDate: Date | null,
-  toDate: Date | null,
-  onChange: (range: DateRange) => void,
-  className?: string,
-  dateFormat: string,
-  closeDialogOnSelection?: boolean
+  fromDate: Date | null;
+  toDate: Date | null;
+  onChange: (range: DateRange) => void;
+  className?: string;
+  dateFormat: string;
+  closeDialogOnSelection?: boolean;
 }
-const DateRangePicker: React.FC<DateRangePickerProps> = (props) => {
-  const setDateRange = (selectedDate: Date, stateAndHelpers: ControllerStateAndHelpers<any>) => {
+const DateRangePicker: React.FC<DateRangePickerProps> = props => {
+  const setDateRange = (
+    selectedDate: Date,
+    stateAndHelpers: ControllerStateAndHelpers<any>
+  ) => {
     const { fromDate, toDate } = props;
 
     if (!fromDate && toDate && isAfter(selectedDate, toDate)) {
@@ -110,27 +122,31 @@ const DateRangePicker: React.FC<DateRangePickerProps> = (props) => {
       selectedItem={{ fromDate, toDate }}
       itemToString={itemToString(dateFormat)}
       onSelect={setDateRange}
-      {...props}>
+      {...props}
+    >
       {({ getInputProps, getLabelProps, selectedItem, ...downshiftProps }) => (
         <div className={props.className}>
           <TextField
             id="date-range"
             label="Date range"
-            InputLabelProps={{...getLabelProps(), 
-              shrink: downshiftProps.isOpen || !!fromDate || !!toDate
+            InputLabelProps={{
+              ...getLabelProps(),
+              shrink: downshiftProps.isOpen || !!fromDate || !!toDate,
             }}
             placeholder="From:"
             fullWidth
             InputProps={{
               ...getInputProps(),
-              endAdornment: <InputAdornment position="start">
-              <IconButton>
-                <DateRange />
-              </IconButton>
-              </InputAdornment>,
+              endAdornment: (
+                <InputAdornment position="start">
+                  <IconButton>
+                    <DateRange />
+                  </IconButton>
+                </InputAdornment>
+              ),
               readOnly: true,
               onClick: downshiftProps.openMenu as any,
-              onFocus: downshiftProps.openMenu as any
+              onFocus: downshiftProps.openMenu as any,
             }}
           />
 
@@ -138,7 +154,9 @@ const DateRangePicker: React.FC<DateRangePickerProps> = (props) => {
             <Wrapper>
               <Kalendaryo
                 {...downshiftProps}
-                startCurrentDateAt={selectedItem.fromDate || selectedItem.toDate}
+                startCurrentDateAt={
+                  selectedItem.fromDate || selectedItem.toDate
+                }
                 fromDate={selectedItem.fromDate}
                 toDate={selectedItem.toDate}
                 clearDateRange={clearDateRange}
@@ -152,7 +170,7 @@ const DateRangePicker: React.FC<DateRangePickerProps> = (props) => {
       )}
     </Downshift>
   );
-}
+};
 
 DateRangePicker.propTypes = {
   fromDate: PropTypes.instanceOf(Date),
@@ -160,14 +178,14 @@ DateRangePicker.propTypes = {
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
   dateFormat: PropTypes.string.isRequired,
-  closeDialogOnSelection: PropTypes.bool
+  closeDialogOnSelection: PropTypes.bool,
 };
 
 DateRangePicker.defaultProps = {
   fromDate: null,
   toDate: null,
   className: '',
-  dateFormat: 'YYYY-MM-DD'
+  dateFormat: 'YYYY-MM-DD',
 };
 
-export default DateRangePicker;
+export { DateRangePicker };
