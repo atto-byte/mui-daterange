@@ -63,7 +63,7 @@
     "helpers": "^0.0.6",
     "kalendaryo": "^1.11.1",
     "material-ui-pickers": "^2.2.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "prop-types": "^15.7.2",
     "react-dates": "^21.3.2",
     "react-intl": "^3.4.0",
